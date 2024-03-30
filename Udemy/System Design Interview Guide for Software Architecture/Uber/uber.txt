@@ -1,0 +1,11 @@
+Functional Requirements 
+    see cabs 
+    ETA(estimated time of arrival) & approx price
+    book a cab 
+    location tracking
+Non Functional Requirements 
+    global
+    very low latency 
+    high availability 
+    high consistency
+    scale

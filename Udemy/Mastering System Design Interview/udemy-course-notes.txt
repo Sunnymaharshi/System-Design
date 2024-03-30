@@ -1,0 +1,197 @@
+Designing Systems that Scale 
+    Vertical Scaling 
+        Increasing or Decreasing Size of a server 
+        There is a limit to how much u can add CPUs and Memory 
+        Single points of failure: if server goes down, App goes down 
+    Horizontal Scaling 
+        Increasing or Decreasing number of a servers
+        Load Balancer to distribute the traffic
+        Easier if web servers are stateless
+    Failover Strategies
+        Cold Standby 
+            takes time 
+            cheap
+        Warm Standby
+            always ready
+            replicate to standby db periodically
+        Hot Standby
+            write to primary and standby dbs simultaneously 
+    Sharding Databases (NoSQL dbs)
+        Shard is horizontal partition of db
+        each shard has it's own backup
+        Tough to do joins cross shards 
+        resharding: need to redistribute data when new shards are added
+        Hotspots:
+        Ex: MongoDB, DynamoDB, Cassandra, HBase
+
+    Denormalized data
+        more storage space, one lookup, updates are hard 
+    Normalized data 
+        Less storage space, more lookups, updates in one place
+    Choosing between these two depends on usecase and user experience u want
+
+    Data Lake 
+        throw data into big distributed storage system 
+        use case: big data and unstructured data 
+    ACID Compliance 
+        Atomicity: Either entire transaction succeeds or fails 
+        Consistency: All database rules are enforced or entire transaction is rolled back 
+        Isolation: No transaction is affected by any other transaction that is still in progress 
+        Durability: Once a transaction is committed, its stays, even if the system crashes immediately after.
+    CAP Theorem 
+        Consistency 
+        Availability 
+        Partition-Tolerance 
+    Caching 
+        Horizontally scaled servers
+        In-Memory(fast)
+        for apps with more read than writes 
+        expiration policy 
+        invalidate cache when writing 
+        Hotspots
+        Cold-start: initially there won't be any data in cache, more requests to db 
+        Eviction Policies 
+            LRU: Least Recently Used 
+            LFU: Least Frequently Used 
+            FIFI: First In First Out 
+        GCP: Memcached and Redis
+        AWS: Elastic Cache 
+    Content Delivery Networks (CDNs)
+        Geographically distributed servers hosting static data 
+        some limited computation is available
+        AWS CloudFront, Google Cloud CDN, Azure CDN
+    Designing for Resilience 
+        Geo-Routing 
+        Secondaries should be spread across multiple racks, availability zones and regions 
+        Make sure system has enough capacity to survive a failure at any reasonable scale 
+    Distributed Storage Solutions
+        Amazon S3, Google Cloud Storage, Azure
+        Hadoop HDFS
+    HDFS Architecture 
+        files are broken into blocks replicated across ur cluster 
+        replication is rack aware
+        Master "Name Node" coordinates all operations 
+        Clients try to read from nearest replica 
+        Writes get replicated across different racks 
+        for high availability there maybe 3 or more name nodes 
+        high available data store for metadata
+    Distributed "NoSQL" databases with a master node that distributes transactions
+    fall on which side of the CAP triangle?
+        Single-master designs favor consistency and partition tolerance. 
+        Although in principle availability it what's given up
+Algorithms and Data Structures
+    Singly Linked List 
+        Grows dynamically (as opposed to an array)
+        Access O(n)
+        Insert at head O(1)
+        Insert at end O(n)
+        usecase: sequential acces 
+        also good for stacks(LIFO) or queues(FIFO) if u keep track of tail 
+    Doubly Linked List 
+        Insert at head or end O(1)
+        Access O(n)
+        Useful for Dequeues
+        MRU: always move most recently used to head 
+    Binary Tree
+        Access O(log(n)) on average, O(n) on worst case 
+        Insert or delete O(log(n))
+    Hash Table 
+        hash collision when more than 1 key maps to same bucket 
+        Insert, lookups and deletions are O(1) worst case O(n)
+    Graphs 
+        BFS and DFS 
+        Access (V+E)
+    Search Algos 
+        Linear search 
+            O(n)
+        Binary search 
+            O(log(n))
+    Sorting Algos 
+        Insertion sort 
+            O(n) best case, O(n^2) worst case 
+            OK for small or mostly-sorted lists
+        Merge sort 
+            O(nlog(n))
+            Scales well to large lists 
+        Quick sort 
+            O(nlog(n))
+            very fast unless u hit worst case O(n^2)
+        Bubble sort 
+            O(n^2)
+    Search and Information Retrieval 
+        General recipe
+            start with forward index of keywords in each document 
+            document ID 123 => "the","quick","red","fox"
+            then generate an inverted index that maps keywords to documents 
+        TF-IDF: Document Search
+            Term Frequency and Inverse Document Frequency
+            Important data for search: figures out what terms are most relevant for a document
+            Term Frequency
+                how often a word occurs in a document
+            Document Frequency
+                how often a word occurs in a entire set of documents 
+            relevancy of word to document is Term Frequency/Document Frequency
+            gives how Important and unique this word is for this document
+Working with Big Data 
+    Message Queues
+        scaling tool
+        decouple services 
+    Apache Spark 
+        HDFS storage
+        Distributed processing framework for big data 
+        In-memory caching, optimized query 
+        Java, Scala, Python and R 
+        Supports code reuse across
+            Batch processing
+            Interactive Queries
+                Spark SQL 
+            Real-Time Analytics 
+            Machine Learning 
+                MLLib
+            Graph processing
+        Spark streaming 
+            Integrated with Kinesis, Kafka, on EMR 
+        Spark is NOT meant for OLTP 
+    Cloud Computing 
+
+Interview Strategies(YouTube)
+    ask questions and confirm your understanding with interviewer
+    "Think Out Loud" 
+    Ask requirements 
+    Working backwards 
+        Start from customer experience to define your requirements 
+        Who are the customers
+        What are their usecases 
+        Which usecases do you need to concern yourself with 
+        think about problems from business perspective not purely technical 
+    Defining Scaling requirements
+        Nail down scale of system (100s or millions of users)
+            how often users are coming 
+            what transaction rate do i need to support 
+        define scale of data 
+            100s or millions of videos 
+        Some tools might not need this level of complexity
+            always prefer the simplest solution that will work 
+            Vertical scaling still has it's place 
+    Define Latency requirements
+        how fast is fast enough?
+            informs need for caching and CDN usage
+            Try to express this in SLA Language (100ms at three nines 99.9% for given operation)
+        YouTube example
+            Caching video recommendations 
+            Caching video metadata
+    Define availability requirements
+        how much downtime can you tolerate 
+
+
+
+
+
+    
+
+
+
+
+        
+    
+

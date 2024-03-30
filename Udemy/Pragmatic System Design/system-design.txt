@@ -1,0 +1,110 @@
+protocols
+    TCP (Transmission Control Protocol)
+        Reliable,Ordered,Error-checked
+        Slower than other protocols
+        WebSockets
+            Connection is established only once 
+            Real time message delivery to client
+            Duplex(two way) protocol
+        HTTP (hypertext transfer protocol)
+            hypertext - text with links to other documents
+            request response protocol
+            Layer 7 - Application Layer   
+            Methods 
+                GET
+                DELETE
+                POST - create 
+                PUT - update 
+                PATCH - partial update 
+            Status Codes
+                100-199 Informational 
+                200-299 Successful
+                300-399 Redirection
+                400-499 Client Error
+                500-599 Server Error  
+            REST
+                set of guidelines for API 
+                built on HTTP 
+                Standard URL structure
+                HTTP error codes to indicate errors 
+                JSON as body format
+            Long Polling 
+                Connection is open until any message comes, then connection is closed 
+                and another connection is opened 
+                long lived HTTP connection
+                good alternative if WebSockets are not an option.
+            gRPC
+                RPC (Remote Procedure Call)
+                    Invoke another service as if it is a local function 
+                    Function is described in an abstract language
+                        IDL - Interface Description Language 
+                    Generator takes description as input and creates implementation in particular language 
+                gRPC 
+                    Developed by Google 
+                    Uses protobuf as IDL 
+                    Uses HTTP2 as transport 
+                    can't be used in browsers 
+                    Protobuf 
+                        Binary protocol 
+                        description stored in *.proto files 
+                        messages are smaller/faster than JSON or XML                         
+            GraphQL
+                Requests and Responses are in JSON format
+                Lets u define which fields to return and which nested entities to return 
+                Query
+                    to fetch data 
+                Mutation 
+                    to modify data 
+    UDP (User Datagram Protocol)
+        monitoring metrics 
+        video streaming 
+        gaming
+
+Parallelism 
+    doing more than one thing at the same time 
+Concurrency 
+    providing an illusion of doing more than one thing at the same time 
+
+Processes
+    each has separate memory space 
+    Interprocess communication can happed through 
+        signals 
+        pipes 
+        Sockets 
+Threads 
+    every process will create one or more threads 
+
+Databases 
+    Indexes 
+        data structure used is B-Tree+
+    Sharding 
+        is breaking one large db into smaller dbs
+        Tenant based 
+            like geographically separate databases 
+            uneven distribution, shards may still be too big to handle 
+        Hash based 
+            even distribution
+            adding new shards is difficult 
+            routing/location service 
+                tells which shard to look for 
+                simplifies adding new shards 
+                single point of failure 
+        downside of sharding
+            added complexity 
+            cross shard operations are expensive 
+            data still may become unbalanced 
+        Consistent Hashing 
+            we give range of values for shards instead of single value for hash 
+
+    Partitioning
+        is breaking one large table into smaller tables
+        smaller table faster queries 
+
+Concurrency Issue
+    multiple threads accessing same data concurrently 
+    solutions
+        use separate Queue 
+        
+
+
+

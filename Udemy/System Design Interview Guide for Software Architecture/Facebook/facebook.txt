@@ -1,0 +1,19 @@
+Functional Requirements 
+    post image/video
+    like comment share
+    add friends 
+    see timeline
+    see user's posts, profile 
+    activity log 
+Non Functional Requirements 
+    global
+    read heavy
+    fast rendering 
+    fast tweet 
+    scale
+Users 
+    Famous
+    Active 
+    Live 
+    Passive 
+    Inactive

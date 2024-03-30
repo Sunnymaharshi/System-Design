@@ -1,0 +1,8 @@
+Functional Requirements 
+    identify roads, routes
+    distance and ETA between 2 points
+    plugable
+Non Functional Requirements 
+    high availability 
+    good accuracy 
+    Not too slow

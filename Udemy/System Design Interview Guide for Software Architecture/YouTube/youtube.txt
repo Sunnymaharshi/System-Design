@@ -1,0 +1,11 @@
+Functional Requirements 
+    upload videos
+    homepage + search 
+    play videos 
+    support all devices 
+Non Functional Requirements 
+    no buffering 
+        low latency
+        high availability 
+    increase users spending time 
+        good recomendation engine

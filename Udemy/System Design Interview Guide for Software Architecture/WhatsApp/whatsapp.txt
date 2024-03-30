@@ -1,0 +1,10 @@
+Functional Requirements 
+    1-1 chat 
+    group chat 
+    text/images/videos
+    read receipt 
+    last seen 
+Non Functional Requirements 
+    very low latency 
+    high availability 
+    scale

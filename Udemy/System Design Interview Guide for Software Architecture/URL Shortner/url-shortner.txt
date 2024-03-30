@@ -1,0 +1,41 @@
+Functional Requirements 
+    Get Short URL 
+    Redirect to Long URL 
+Non Functional Requirements
+    Very low latency 
+    Very high Availability 
+
+Solution 
+    Define len of short URL according to how many short URLs you want to create 
+        length is 7
+    until what duration u need to support short URL?
+    What characters can be included in Short URL?
+        a-z,A-Z,0-9 -> 62 characters
+    Generate Short URL 
+        if we have multiple systems trying to generate short URL
+        there could be generate same URL (collision)
+        Redis 
+            it always gives unique number 
+            unique number at base 10 converted to base 62
+            if we have single redis, it could not keepup with requests 
+            if we have multiple redis, we need to make sure they generate different numbers which is complex
+            Redis is not useful
+        Short URL Service
+            if we could generate a number from Long URL 
+                even if we have multiple instances, they always generate unique number 
+            then convert that number(base 10) to base 62 
+            Assign a range for each instance 
+                request Token Service for a range 
+                after range is completed instance again request for range 
+                Token Service 
+                    running on single thread 
+                    gives a range to requested instance
+                    uses MySQL Database to keep track of ranges 
+            if service shutsdown it's range is lost 
+    Redirect to Long URL 
+        use Cassandra for storing URLs 
+        
+        
+
+
+

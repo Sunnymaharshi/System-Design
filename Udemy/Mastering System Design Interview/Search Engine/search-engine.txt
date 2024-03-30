@@ -1,0 +1,17 @@
+search engine for the entire web, like google or just some intranet tool?
+    entire web 
+can we focus just on problem of generating reasonable search results at massive scale?
+
+Algorithm 
+    Inverted Index 
+    Keyword -> sorted list of documents 
+    things to consider for relevancy of document to Keyword
+        backlinks 
+        Terms in document
+        Their position 
+        Font size/headings etc 
+        Titles 
+        Lenght of document
+        Term frequency 
+        Metadata 
+        

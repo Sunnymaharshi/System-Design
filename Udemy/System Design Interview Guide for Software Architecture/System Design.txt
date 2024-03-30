@@ -1,0 +1,53 @@
+Clarify 
+    Ask if it is Low Level Design(LLD) or High Level Design(HLD)
+    What features u should focus on?
+    What scale we need?
+    Manage ur time well, tell main components and how they interact and then ask which one to go in depth.
+    Tell if u don't know how to build a particular component and explain how you will do it.
+
+Choosing right database
+    depends on
+        Data
+            Structured data 
+                need ACID support
+                    RDMS
+                    ex:MySQL,Oracle,Postgres SQL
+                no need for ACID 
+                    can use RDMS or NoSQL
+            Non-structured data
+                Data types, Queries
+                    Document DB 
+                    ex: MongoDB,Couchbase DB 
+                Ever increasing data, finite queries 
+                    Columnar DB 
+                    ex: Cassandra, HBase 
+        Query pattern 
+        Amount of scale u need 
+    Caching
+    File storage
+        Blob storage
+            images, videos etc 
+            ex: Amazon S3 
+    Text Search engine 
+        ex: Elastic Search
+        Fuzzy Search
+            if user enters incorrect spelling u need to figure out correct one 
+            level of Fuzzyness can be provided
+    Time series database    
+        usecase: storing metrics of application/server 
+        ex: InfluxDB, openTSDB (open time series database)
+    Analytics 
+        ex: Hadoop
+        for data warehousing 
+
+Cassandra
+    data is partitioned into different nodes
+    can handle large amount of data 
+    good 
+        sequential search 
+        search using partition id
+    bad
+        random search
+        aggregation 
+
+    

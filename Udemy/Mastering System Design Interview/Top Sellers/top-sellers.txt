@@ -1,0 +1,7 @@
+Requirements
+    What period of time we compute top-sellers?
+    Top Sellers compute 
+        we just look at all sales, but give them less weight over time
+        so older purchase count less than new ones
+    What sort of scale we need?
+        

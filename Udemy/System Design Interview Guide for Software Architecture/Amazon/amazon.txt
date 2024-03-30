@@ -1,0 +1,11 @@
+Functional Requirements 
+    search products 
+        result include deliverable or not 
+    cart/wish list 
+    checkout 
+    view orders 
+Non Functional Requirements 
+    Low Latency 
+    High Availability 
+    High Consistency 
+    

@@ -1,0 +1,10 @@
+Functional Requirements 
+    send notifications 
+    plugable
+        support different types of notifications
+        whatsapp,email etc
+    SaaS
+    prioritization
+Non Functional Requirements 
+    High availability
+    Many clients 

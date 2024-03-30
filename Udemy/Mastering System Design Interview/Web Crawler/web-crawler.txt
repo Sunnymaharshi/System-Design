@@ -1,0 +1,16 @@
+Requirements 
+    main purpose of this crawler?
+        search engine 
+    Entrie web or few sites ?
+    Crawled how often?
+    we need check pages we've crawled before to see if there are any changes?
+    do we need to store copy of every page as we go? does that include images?
+    main purpose of this crawler?
+
+Design 
+    Graph traversal problem 
+        depth of website is near infinite of we use BFS traversal
+    Queue of URLs to Crawl 
+    URL filtering/stoplist
+        needed for prohibited content
+     

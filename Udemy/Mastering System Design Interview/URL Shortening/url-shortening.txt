@@ -1,0 +1,36 @@
+like bit.ly 
+service where anyone can enter a URL, get a shorter URL to use in its place 
+we manage redirecting them
+what sort of scale we need?
+Any restrictions on characters we use?
+    some symbols might be harder to type or remember 
+
+how short is short for URL?
+    a-z,0-9 36 characters
+    if we need to 6 length of url then 36^6 possibilities 
+Can users specify their own URLs if its available
+Do we let them edit and delete short URLs once created?
+How long shorten URL last?
+
+Design 
+    API
+        Add new URL 
+            long URL,user ID(auth) -> status, short URL
+            what if someone else shortened it earlier?
+        Add a new vanity URL
+            long URL, user ID, vanity URL -> status 
+        Update URL 
+            long URL, user ID, updated URL -> status, existing short URL 
+        Delete URL 
+            long URL, user ID -> status 
+        Display mapping 
+            long URL, user ID -> status, short URL 
+        Redirect 
+            short URL -> long URL 
+            returns 301 redirect to redirect client to long URL 
+            301 is permanent redirect, browser caches it 
+            302 is temporary redirect, if we want redirect to updated URL immediately
+    Generate Short URL 
+        Convert long URL into base 36 encoding 
+        we get sequential ID 
+    

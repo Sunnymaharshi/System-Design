@@ -1,0 +1,10 @@
+Functional Requirements 
+    1 on 1 calls 
+    group calls 
+    audio/video/screen share
+    record
+Non Functional Requirements 
+    very fast
+    high availability 
+    data loss is ok (frame loss)
+    

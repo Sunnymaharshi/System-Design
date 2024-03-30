@@ -1,0 +1,16 @@
+Functional Requirements 
+    tweet
+    re-tweet
+    follow
+    search
+Non Functional Requirements 
+    read heavy
+    fast rendering 
+    fast tweet 
+    scale
+Users 
+    Famous
+    Active 
+    Live 
+    Passive 
+    Inactive

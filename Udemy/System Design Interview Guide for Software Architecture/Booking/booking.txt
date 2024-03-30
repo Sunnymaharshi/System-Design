@@ -1,0 +1,15 @@
+Functional Requirements 
+    Hotel 
+        onboard
+        update
+        bookings 
+    User
+        search 
+        book
+        check bookings 
+    Analytics 
+Non Functional Requirements 
+    Low Latency 
+    High Availability 
+    High Consistency 
+
